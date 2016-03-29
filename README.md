@@ -1,5 +1,5 @@
 # About
-The code and resources to create a Neopixel/WS281x Wordclock using a Raspberry Pi, Node.js and WS281x LED strips. I'm not convinced Node.js is the best tool for this and the use of the 'sleep' package to contort it into a more microcontroller like loop w/ delays seems cheeky - but it currently works. 
+The code and resources to create a Neopixel/WS281x Wordclock using a Raspberry Pi, Node.js and WS281x LED strips. I'm not convinced Node.js is the best tool for this and the use of the 'sleep' package to contort it into a more microcontroller like loop with a npm sleep package seems cheeky - but it currently works. 
 
 I primarily used Node.js it purely due to familiarity, had a RPi, and was fed up of faffing with a Spark Core.
 

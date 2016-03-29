@@ -16,12 +16,12 @@ You need to have Node/NPM installed.
 
 1. Create your project folder.
 2. Install rpi-ws281x-native and sleep
-   *```npm install sleep```
-   *```npm install rpi-ws281x-native```
+   ```npm install sleep```
+   ```npm install rpi-ws281x-native```
 3. Install PM2
-  *```npm install pm2 -g```
+  ```npm install pm2 -g```
 4. Because we're interfacing with the GPIO pins the script needs to run with root privileges.
-  *```sudo pm2 start wordclock.js```
+  ```sudo pm2 start wordclock.js```
 
 
 

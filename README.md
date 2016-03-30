@@ -14,9 +14,8 @@ The stencil has letters on a grid of 1.67cm - coincidentally the gap between WS2
 You need to have Node/NPM installed.
 
 1. Create your project folder.
-2. Install rpi-ws281x-native and sleep
-   ```npm install sleep```
-   ```npm install rpi-ws281x-native```
+2. Install dependencies
+   ```npm install```
 3. You can then start the clock, though it needs root privileges to use the GPIO pins ```sudo node wordclock.js```
 3. If you want to run it in the background, then use PM2:
   ```npm install pm2 -g```

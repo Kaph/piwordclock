@@ -1,6 +1,4 @@
 var neopixels = require('rpi-ws281x-native')
-var sleep = require('sleep')
-
 // Variable setup
 // Setting up which led numbers on the strip correspond with which words.
 // Each word has a 'begin' and an 'end' led number
@@ -17,14 +15,10 @@ var pixelData = new Uint32Array(110)
 
 neopixels.init(NUM_LEDS)
 
-loop() // Start loop
-
 // Main loop function
-function loop() {
+var loop = setInterval(function(){
   parseTime(getTime())
-  sleep.sleep(10)
-  loop() // Call ourself so we're looped
-}
+}, 10000)
 
 function getTime() {
   // Get the current time.

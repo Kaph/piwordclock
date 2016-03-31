@@ -1,15 +1,17 @@
 # About
-Resources to create a Neopixel/WS281x Wordclock using a Raspberry Pi, Node.js and WS281x LED strips. I'm not convinced Node.js is the best tool for this and the use of the 'sleep' package to contort it into a more microcontroller like loop with a npm sleep package seems cheeky - but it currently works. 
+Resources to create a Neopixel/WS281x Wordclock using a Raspberry Pi, Node.js and WS281x LED strips. This project can easily be extended to provide additional functuality such as a web configuration utility or use information from other APIs.
+
+The basic premise is the same regardless of what 'words' you want to use - you could personalise it to include birthdays, reminders, chores, weather or anything else.
 
 
 # Setup
 
-## Clock
+### Clock
 You need to create your wordclock. Included is the stencil/baffle plate ready for laser cutting - it's on a P2 size canvas from www.razorlab.com and easily ordered. I had it cut on Plywood. 
 
 The stencil has letters on a grid of 1.67cm - coincidentally the gap between WS281x/Neopixel strips at 60LEDs/m. 
 
-## Raspberry Pi
+### Raspberry Pi
 
 You need to have Node/NPM installed.
 

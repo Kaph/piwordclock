@@ -43,10 +43,8 @@ function getTime() {
 function parseTime(currentTime) {
   // Because we're calling currentTime and it returns an array of hour/minute - it is expected that parseTime will receive an array.
   // [hour, minute]
-  var toHour = false
   var hour = currentTime[0]
   var minute = currentTime[1]
-  //console.log("Parsing time: " + hour + ":" + minute)
 
   var currentWords = []
 
@@ -60,8 +58,8 @@ function parseTime(currentTime) {
     currentWords.push(descLeds[1])
   } else if (minute > 30) {
     currentWords.push(descLeds[0])
-    // We're now 'to' the hour - this var is used to adjust hour
-    toHour = true
+    // We're now 'to' the hour, so increment the hour
+    hour++
   }
 
   // Must be a better way to do this than persistent if-elses.
@@ -81,79 +79,30 @@ function parseTime(currentTime) {
   }
 
   // We need to parse the hour too. Tedious.
-  // If we're 'to' the hour, the hour needs to be the next hour.
   if (hour == 0 || hour == 12) {
-    if (toHour == false) {
       currentWords.push(hoursLeds[11])
-    } else {
-      currentWords.push(hoursLeds[0])
-    }
   } else if (hour == 1 || hour == 13) {
-    if (toHour == false) {
       currentWords.push(hoursLeds[0])
-    } else {
-      currentWords.push(hoursLeds[1])
-    }
   } else if (hour == 2 || hour == 14) {
-    if (toHour == false) {
       currentWords.push(hoursLeds[1])
-    } else {
-      currentWords.push(hoursLeds[2])
-    }
   } else if (hour == 3 || hour == 15) {
-    if (toHour == false) {
       currentWords.push(hoursLeds[2])
-    } else {
-      currentWords.push(hoursLeds[3])
-    }
   } else if (hour == 4 || hour == 16) {
-    if (toHour == false) {
       currentWords.push(hoursLeds[3])
-    } else {
-      currentWords.push(hoursLeds[4])
-    }
   } else if (hour == 5 || hour == 17) {
-    if (toHour == false) {
       currentWords.push(hoursLeds[4])
-    } else {
-      currentWords.push(hoursLeds[5])
-    }
   } else if (hour == 6 || hour == 18) {
-    if (toHour == false) {
       currentWords.push(hoursLeds[5])
-    } else {
-      currentWords.push(hoursLeds[6])
-    }
   } else if (hour == 7 || hour == 19) {
-    if (toHour == false) {
       currentWords.push(hoursLeds[6])
-    } else {
-      currentWords.push(hoursLeds[7])
-    }
   } else if (hour == 8 || hour == 20) {
-    if (toHour == false) {
       currentWords.push(hoursLeds[7])
-    } else {
-      currentWords.push(hoursLeds[8])
-    }
   } else if (hour == 9 || hour == 21) {
-    if (toHour == false) {
       currentWords.push(hoursLeds[8])
-    } else {
-      currentWords.push(hoursLeds[9])
-    }
   } else if (hour == 10 || hour == 22) {
-    if (toHour == false) {
       currentWords.push(hoursLeds[9])
-    } else {
-      currentWords.push(hoursLeds[10])
-    }
   } else if (hour == 11 || hour == 23) {
-    if (toHour == false) {
       currentWords.push(hoursLeds[10])
-    } else {
-      currentWords.push(hoursLeds[11])
-    }
   }
 
   // Let's turn the leds on
@@ -162,17 +111,15 @@ function parseTime(currentTime) {
 
 
 function turnOnLeds(words) {
-  //console.log("Turning on leds.")
-  //console.log(words)
-  // When turnonLeds is called it will receive an array of all the words due to be lit
-  
-  
-  /*
-  // Turn on all not-in-use LEDs as a 'background'
-  for (var i=0; i<NUM_LEDS; i++) {
-    pixelData[i] = rgb2Int(50, 50, 100)
-  }
-  */
+  // When turnonLeds is called it will receive an array of all the
+  // leds corresponding with words to be lit
+
+
+
+  // Turn on all not-in-use LEDs as a 'background' - uncomment below to enable
+  //for (var i=0; i<NUM_LEDS; i++) {
+  //  pixelData[i] = rgb2Int(50, 50, 100)
+  //}
 
   // Turn on the leds given in an array.
   var l = words.length
@@ -180,7 +127,6 @@ function turnOnLeds(words) {
     // For each word in the array
     var beginLed = words[i][0]
     var endLed = words[i][1]
-    //console.log("Begin: " + beginLed + ". End: " + endLed)
     for (var q = beginLed; q <= endLed; q++) {
       // We've named the pixels as index-1, but we're using an array which is index-0 and so we need to adjust
       pixelData[q-1] = rgb2Int(230, 170, 80)

@@ -165,8 +165,10 @@ function turnOnLeds(words) {
   //console.log("Turning on leds.")
   //console.log(words)
   // When turnonLeds is called it will receive an array of all the words due to be lit
+  
+  
   /*
-  // Turn on all the others as a 'background'
+  // Turn on all not-in-use LEDs as a 'background'
   for (var i=0; i<NUM_LEDS; i++) {
     pixelData[i] = rgb2Int(50, 50, 100)
   }
@@ -180,16 +182,15 @@ function turnOnLeds(words) {
     var endLed = words[i][1]
     //console.log("Begin: " + beginLed + ". End: " + endLed)
     for (var q = beginLed; q <= endLed; q++) {
-      // We've named the pixels as base-1, but we're using an array which is base-0 and so we need to adjust
+      // We've named the pixels as index-1, but we're using an array which is index-0 and so we need to adjust
       pixelData[q-1] = rgb2Int(230, 170, 80)
     }
   }
 
   // Render to the strip
-  // Turn on whatever the array contains. 'Whatever' being a list of 24bit colour stuff.
   neopixels.render(pixelData)
 
-  // Reset the array to blank stuff
+  // Reset the array (so we don't just keep turning on all the LEDs)
   pixelData = new Uint32Array(110)
 }
 

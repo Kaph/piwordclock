@@ -1,0 +1,22 @@
+{
+  "name": "piwordclock",
+  "version": "0.1.0",
+  "description": "Resources to create a Neopixel/WS281x Wordclock using a Raspberry Pi, Node.js and WS281x LED strips. I'm not convinced Node.js is the best tool for this and the use of the 'sleep' package to contort it into a more microcontroller like loop with a npm sleep package seems cheeky - but it currently works.",
+  "main": "wordclock.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kaph/piwordclock.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kaph/piwordclock/issues"
+  },
+  "homepage": "https://github.com/Kaph/piwordclock#readme",
+  "dependencies": {
+    "rpi-ws281x-native": "^0.8.1"
+  }
+}

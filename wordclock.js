@@ -79,7 +79,7 @@ function parseTime(currentTime) {
   }
 
   // We need to parse the hour too. Tedious.
-  if (hour == 0 || hour == 12 || hour == 24) {
+  if (hour == 0 || hour == 12 || hour == 24) { // Hour '24' so that we display 'TWELVE' after 23:30
       currentWords.push(hoursLeds[11])
   } else if (hour == 1 || hour == 13) {
       currentWords.push(hoursLeds[0])

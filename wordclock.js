@@ -114,8 +114,6 @@ function turnOnLeds(words) {
   // When turnonLeds is called it will receive an array of all the
   // leds corresponding with words to be lit
 
-
-
   // Turn on all not-in-use LEDs as a 'background' - uncomment below to enable
   //for (var i=0; i<NUM_LEDS; i++) {
   //  pixelData[i] = rgb2Int(50, 50, 100)
